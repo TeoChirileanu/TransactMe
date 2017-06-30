@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="TransactMe20170630081131" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\teodo\\Documents\\Visual\ Studio\ 2017\\Projects\\WebApplication1\\WebApplication1\\obj\\Debug\\net47\\win7-x86\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

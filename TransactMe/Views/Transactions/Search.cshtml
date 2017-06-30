@@ -1,0 +1,35 @@
+﻿@model TransactMe.Models.ViewModels.SearchViewModel
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h2>Create</h2>
+
+<form asp-action="SearchResults">
+    <div class="form-horizontal">
+        <h4>Transaction</h4>
+        <hr/>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ClientSsn" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ClientSsn" class="form-control"/>
+                <span asp-validation-for="ClientSsn" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-default"/>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

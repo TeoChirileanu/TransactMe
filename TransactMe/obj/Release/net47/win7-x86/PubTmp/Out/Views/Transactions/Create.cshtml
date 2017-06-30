@@ -1,0 +1,72 @@
+@using TransactMe.Services
+@model TransactMe.Models.ViewModels.TransactionViewModel
+@inject SelectListItemService Service
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Transaction</h4>
+        <hr/>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="ClientFirstName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ClientFirstName" class="form-control"/>
+                <span asp-validation-for="ClientFirstName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ClientLastName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ClientLastName" class="form-control"/>
+                <span asp-validation-for="ClientLastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ClientSsn" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ClientSsn" class="form-control"/>
+                <span asp-validation-for="ClientSsn" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="TransactionType" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="TransactionType" asp-items="Service.TransactionTypes" class="form-control"></select>
+                <span asp-validation-for="TransactionType" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CurrencyName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="CurrencyName" asp-items="Service.Currencies" class="form-control"></select>
+                <span asp-validation-for="CurrencyName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Amount" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Amount" class="form-control"/>
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default"/>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

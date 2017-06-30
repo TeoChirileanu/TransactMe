@@ -1,0 +1,72 @@
+@model Transaction
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Transaction</h4>
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientFirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ClientFirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientLastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ClientLastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientSsn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ClientSsn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TransactionType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TransactionType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrencyName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CurrencyName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Rate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Rate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeStamp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TimeStamp)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.TransactionId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
